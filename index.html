@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Study Quest (스터디 퀘스트) - 학습 & RPG 반응형 웹앱</title>
+  <meta name="description" content="중학생을 위한 학습 RPG 웹앱 Study Quest! 국어, 영어, 수학 문제를 풀고 몬스터를 처치하며 레벨업하는 모험!">
+
+  <!-- 파비콘 및 폰트 -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%3E<text y=%2226%22 font-size=%2226%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="css/style.css?v=20261114-3">
+</head>
+
+<body>
+  <div class="app-layout">
+    <!-- 1. 데스크톱 & 태블릿 좌측 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-badge">⚔️</div>
+        <div class="logo-text">
+          <h1>Study Quest</h1>
+          <p>중등 학습 RPG</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-nav="home">
+          <span class="nav-icon">🏰</span>
+          <span>마을 홈</span>
+        </button>
+        <button class="nav-item" data-nav="subjects">
+          <span class="nav-icon">📚</span>
+          <span>과목 선택</span>
+        </button>
+        <button class="nav-item" data-nav="battle">
+          <span class="nav-icon">⚔️</span>
+          <span>몬스터 전투</span>
+        </button>
+        <button class="nav-item" data-nav="quests">
+          <span class="nav-icon">📜</span>
+          <span>오늘의 퀘스트</span>
+        </button>
+        <button class="nav-item" data-nav="inventory">
+          <span class="nav-icon">🎒</span>
+          <span>인벤토리</span>
+        </button>
+        <button class="nav-item" data-nav="stats">
+          <span class="nav-icon">⏱️</span>
+          <span>학습 기록 & 타이머</span>
+        </button>
+        <button class="nav-item" data-nav="settings">
+          <span class="nav-icon">⚙️</span>
+          <span>설정</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sound-toggle-btn" id="btn-sound-toggle">🔊 사운드 ON</button>
+      </div>
+    </aside>
+
+    <!-- 2. 메인 화면 영역 -->
+    <div class="main-wrapper">
+      <!-- 상단 상태 표시 헤더 -->
+      <header class="top-header">
+        <div class="header-player-pill">
+          <span class="header-level-badge" id="header-level">Lv.1</span>
+          <div class="header-exp-group">
+            <span class="header-exp-text" id="header-exp-text">35 / 100 EXP</span>
+            <div class="progress-bar mini-bar" style="width: 140px;">
+              <div class="progress-fill exp-fill" id="header-exp-bar" style="width: 35%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="header-currencies">
+          <div class="currency-pill gold" title="보유 골드">
+            <span>💰</span>
+            <span id="header-gold">240</span>
+          </div>
+          <div class="currency-pill gems" title="보유 보석">
+            <span>💎</span>
+            <span id="header-gems">10</span>
+          </div>
+          <div class="currency-pill streak" title="연속 학습 일수">
+            <span>🔥</span>
+            <span id="header-streak">4일 연속</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 동적 페이지 전환 컨테이너 -->
+      <main class="view-container" id="view-container">
+        <!-- JavaScript로 동적 렌더링 -->
+      </main>
+    </div>
+
+    <!-- 3. 모바일 전용 하단 내비게이션 바 -->
+    <nav class="bottom-nav">
+      <button class="bottom-nav-item active" data-nav="home">
+        <span class="nav-icon">🏰</span>
+        <span>마을</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="subjects">
+        <span class="nav-icon">📚</span>
+        <span>학습</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="battle">
+        <span class="nav-icon">⚔️</span>
+        <span>전투</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="quests">
+        <span class="nav-icon">📜</span>
+        <span>퀘스트</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="inventory">
+        <span class="nav-icon">🎒</span>
+        <span>가방</span>
+      </button>
+      <button class="bottom-nav-item" data-nav="stats">
+        <span class="nav-icon">⏱️</span>
+        <span>기록</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- 토스트 알림 컨테이너 -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- 스크립트 로드 -->
+  <script src="js/data.js?v=20261114-3"></script>
+  <script src="js/village2d.js?v=20261114-3"></script>
+  <script src="js/app.js?v=20261114-3"></script>
+</body>
+
+</html>
