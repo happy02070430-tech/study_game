@@ -1,0 +1,10 @@
+# 스크린샷/이미지 임시파일
+*.tmp
+*.log
+
+# OS 파일
+.DS_Store
+Thumbs.db
+
+# VS Code (선택적으로 포함하고 싶으면 삭제)
+# .vscode/
